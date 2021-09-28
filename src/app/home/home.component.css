@@ -1,0 +1,39 @@
+
+.content{
+    padding: 10px;
+}
+.content > mat-card{
+    width:100px;
+}
+mat-card{
+    width: 250px;
+}
+
+
+.mat-card-avater{
+    background-image: url(/assets/mountains.jpg);
+    background-size: cover;
+}
+
+#price{
+    font-size: large;
+    font-weight: bold;
+
+}
+
+.modal-body{
+    max-width: 500px;
+    height: 500px;
+    background-color: rgb(91, 197, 65);
+    color: rgb(207, 145, 30);
+    background: transparent;
+    font-size: 20px;   
+}
+.xlModal > .modal-dialog {
+    max-width: 1490px !important;
+    min-width: 971px !important;   
+    width: 95% !important;
+}
+modal-body>img{
+    float: left;
+}

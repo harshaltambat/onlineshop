@@ -1,0 +1,60 @@
+
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="50px grid" >
+    <div  fxFlex.sm="25%" fxFlex.xs="100%"  fxFlex.sm="33%"  *ngFor="let num of products">
+      <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+          <div mat-card-avatar></div>
+      <mat-card-title> {{ num.p_name }} </mat-card-title>
+    </mat-card-header>
+      <img mat-card-image [src]="num.img" alt="{{ num.p_name }}">
+    <mat-card-content>
+      <strong>{{ num.p_name }}</strong>
+    </mat-card-content>
+    <mat-card-actions>
+     <p>{{ num.p_desc}} </p>
+    </mat-card-actions>
+    <mat-card-footer>
+      <button mat-button>
+        Like</button>
+      <button mat-button>Share</button>
+      <button mat-button (click)="open(content)"> Read More...</button>
+    
+      <!-- Modal -->
+    <ng-template class="modal" #content let-c="close" let-d="dismiss" >
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title"> {{ num.p_name }} </h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <img [src]="num.img" alt="{{ num.p_name }}">
+      <div class="modal-body">
+        <p class="description">{{ num.p_desc }}</p>
+        <p id="price"> Product Price: {{ num.p_price }}</p> 
+        <div class="desc">
+          <p>Product Details:</p>
+           <p>{{ num.p_details }}</p>
+        </div>
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')"> <span class="material-icons-outlined">
+          shopping_cart
+          </span>Buy</button>
+        <button type="button" mat-raised-button (click)="c('Save click')"> <mat-icon> favorite </mat-icon> WishList</button>
+      </div>
+  </ng-template>
+
+    </mat-card-footer>
+  </mat-card>
+</div>
+</div>
+
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+</mat-card>
+
+
